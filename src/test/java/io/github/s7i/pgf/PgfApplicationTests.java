@@ -1,4 +1,4 @@
-package sygnowski.io.pgf;
+package io.github.s7i.pgf;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

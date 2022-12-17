@@ -1,8 +1,10 @@
-# How to's
+# PGF | PLAYground4FUN
+
+## How to's
 
 Run the app: `./gradlew bootRun`
 
 ## Endpoints
 
-- Swagger: (http://localhost:8080/swagger-ui.html)
-- api: (http://localhost:8080/api/customer)
+- Swagger: (http://localhost:8087/swagger-ui.html)
+- api: (http://localhost:15656/api/customer)

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package io.s7i.pgf.proto;
+
+option java_multiple_files = true;
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+
+service MetadataService {
+  rpc metadata(google.protobuf.Empty) returns (MetadataResponse) {}
+}
+
+message MetadataResponse {
+  map<string, string> bundle = 1;
+}

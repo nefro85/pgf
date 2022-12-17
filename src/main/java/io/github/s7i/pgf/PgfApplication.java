@@ -1,4 +1,4 @@
-package sygnowski.io.pgf;
+package io.github.s7i.pgf;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
