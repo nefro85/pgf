@@ -4,6 +4,7 @@ plugins {
 	id 'java'
 	id "com.google.protobuf" version "0.8.19"
 	id "io.freefair.lombok" version "6.3.0"
+	id "com.palantir.docker" version "0.35.0"
 	id "idea"
 }
 
@@ -24,6 +25,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springdoc:springdoc-openapi-ui:1.6.13'
 	implementation 'com.h2database:h2:2.1.214'
+	implementation 'org.postgresql:postgresql:42.6.0'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'net.devh:grpc-spring-boot-starter:2.14.0.RELEASE'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -92,4 +94,14 @@ idea {
 		// If you have additional sources, add them here:
 		//sourceDirs += file("/path/to/other/sources");
 	}
+}
+
+bootJar {
+	archiveFileName = "${archiveBaseName.get()}.${archiveExtension.get()}"
+}
+
+docker {
+	dependsOn bootJar
+	name "s7i/${project.name}"
+	files("build/libs/pgf.jar")
 }
